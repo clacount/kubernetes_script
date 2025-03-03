@@ -360,12 +360,12 @@ namespaces_changed() {
 # Main Controller 
 main() {
  
-  #cat logo.txt
+  cat logo.txt
   # Let's first check to see if we've transitioned from context/namespace states. If so, display things slightly differently to the user.
   if [ $from_change_context == true ] 
   then
     clear
-    #cat logo.txt
+    cat logo.txt
     echo
     echo
     echo "$updated_context"
@@ -398,9 +398,6 @@ main() {
   echo '  7: Remove all deployments and pods for current namespace'
   echo '  8: Remove namespaces, deployments, and pods from this session'
   echo '  9: Generate secrets - ### NOT AVAILABLE FOR EMULATION CONTEXT ###'
-  #echo ' 10: Start MCSLite'
-  #echo ' 11: Uninstall MCSLite'
-  #echo ' 12: Start local cluster - ### NOT WORKING YET ###'
   echo ' 10: Launch k9s'
   echo ' 11: See all namespaces changed within this session'
   echo ' 12: Quit'
@@ -445,18 +442,6 @@ main() {
   elif [[ $user_selection == 9 ]]
   then
     generate_secrets # Runs method that will generate secrets.
-
-   #elif [[ $user_selection == 10 ]]
-  #then
-    #start_mcs_lite # Runs method that will start MCSLite using the install.sh script.
-
-  #elif [[ $user_selection == 11 ]]
-  #then
-    #reinstall_msclite # Runs method that will uninstall MCSLite using the install.sh script.
-
- # elif [[ $user_selection == 12 ]]
-  #then
-    #start_cluster # Runs method that will start a local cluster.
 
   elif [[ $user_selection == 10 ]]
   then
